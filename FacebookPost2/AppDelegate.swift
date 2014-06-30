@@ -12,13 +12,51 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
                             
     var window: UIWindow?
-
-
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: NSDictionary?) -> Bool {
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        // Override point for customization after application launch.
+    
+        // News View Controller within Navigation Controller
+        let newsViewController: NewsViewController = NewsViewController(nibName:"NewsViewController", bundle:nil)
+        var newsNavigationController = UINavigationController(rootViewController: newsViewController)
+        newsViewController.tabBarItem.title = "News Feed"
+        newsViewController.tabBarItem.image = UIImage(named: "newsfeedicon")
+        
+        // Requests View Controller within Navigation Controller
+        var requestsViewController: RequestsViewController = RequestsViewController(nibName:"RequestsViewController", bundle:nil)
+        var requestsNavigationController = UINavigationController(rootViewController: requestsViewController)
+        requestsViewController.tabBarItem.title = "Requests"
+        requestsViewController.tabBarItem.image = UIImage(named: "requestsicon")
+        
+        // Messages View Controller within Navigation Controller
+        var messagesViewController = MessagesViewController(nibName: "MessagesViewController", bundle: nil)
+        var messagesNavigationController = UINavigationController(rootViewController: messagesViewController)
+        messagesViewController.tabBarItem.title = "Messages"
+        messagesViewController.tabBarItem.image = UIImage(named: "messagesicon")
+        
+        //Nofitifications View Controller within Navigation Controller
+        var notificationsViewController = NotificationsViewController(nibName: "NotificationsViewController", bundle: nil)
+        var notificationsNavigationController = UINavigationController(rootViewController: notificationsViewController)
+        notificationsViewController.tabBarItem.title = "Notifications"
+        notificationsViewController.tabBarItem.image = UIImage(named: "notificationsimage")
+        
+        // "More" View Controller within Navigation Controller
+        var moreViewController = MoreViewController(nibName: "MoreViewController", bundle: nil)
+        var moreNavigationController = UINavigationController(rootViewController: moreViewController)
+        moreViewController.tabBarItem.title = "More"
+        moreViewController.tabBarItem.image = UIImage(named: "moreicon")
+        
+        
+        // Create the Tab Bar Controller and create an array of View Controllers as tabs
+        var tabBarController = UITabBarController()
+        tabBarController.viewControllers = [newsNavigationController, requestsViewController, messagesViewController, notificationsViewController, moreViewController]
+        
+        // set the tabBarController as the RootViewController
+        
+        self.window!.rootViewController = tabBarController
         self.window!.backgroundColor = UIColor.whiteColor()
         self.window!.makeKeyAndVisible()
+        
         return true
     }
 
