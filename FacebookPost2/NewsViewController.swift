@@ -129,8 +129,6 @@ class NewsViewController: UIViewController {
     
     func configureHerDescriptionLabel() {
         
-        var text = herDescriptionLabel.text as NSString
-        var linkRang = text.rangeOfString(NSLocalizedString(
      //   var text = herDescriptionLabel.text as NSString
      //   var linkRang = text.rangeOfString(NSLocalizedString(
         
