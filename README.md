@@ -24,4 +24,6 @@ Optional stories completed
 Optional stories not completed
 * Optional: The like button should toggle the "liked" state.
 * Optional: Tapping on the photo should show a view controller with a full-screen photo. 
+ 
+<a href="http://imgur.com/SGlaeuk"><img src="http://i.imgur.com/SGlaeuk.gif" title="Hosted by imgur.com" /></a>
 
