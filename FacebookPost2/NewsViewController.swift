@@ -110,6 +110,7 @@ class NewsViewController: UIViewController {
         
         
         UIView.animateWithDuration(animationDuration, delay: 0.0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {self.postTextView.frame = CGRectMake(0, self.view.frame.size.height - kbSize.height - self.postTextView.frame.size.height, self.postTextView.frame.size.width, self.postTextView.frame.size.height)}, completion: nil)
+       
     }
     
     func willHideKeyboard(notification: NSNotification) {
@@ -143,6 +144,8 @@ class NewsViewController: UIViewController {
 
     @IBAction func onLikeButton(sender: AnyObject) {
         
+        likeButton.selected = !likeButton.selected
+            
         println("button clicked")
     }
     
