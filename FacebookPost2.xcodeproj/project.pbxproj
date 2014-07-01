@@ -24,6 +24,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		D545BDF919626BDC00E94D47 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D58928AA195D106A00823EE9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D58928B1195D106A00823EE9;
+			remoteInfo = FacebookPost2;
+		};
+		D545BDFB19626BDC00E94D47 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D58928AA195D106A00823EE9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D58928B1195D106A00823EE9;
+			remoteInfo = FacebookPost2;
+		};
 		D58928C0195D106A00823EE9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D58928AA195D106A00823EE9 /* Project object */;
@@ -36,8 +50,7 @@
 /* Begin PBXFileReference section */
 		0925F17865074FEC80654B76 /* libPods-FacebookPost2.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FacebookPost2.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D423EF85059143FFB0B36958 /* Pods-FacebookPost2.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FacebookPost2.xcconfig"; path = "Pods/Pods-FacebookPost2.xcconfig"; sourceTree = "<group>"; };
-		D537BC0F195F7E760058FF0E /* FacebookPost2-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FacebookPost2-Bridging-Header.h"; sourceTree = "<group>"; };
-		D537BC10195F7E760058FF0E /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		D54236581962745B00EB93C9 /* Bridging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bridging.h; sourceTree = "<group>"; };
 		D58928B2195D106A00823EE9 /* FacebookPost2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FacebookPost2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D58928B6195D106A00823EE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D58928B7195D106A00823EE9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -108,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				D58928B7195D106A00823EE9 /* AppDelegate.swift */,
+				D54236581962745B00EB93C9 /* Bridging.h */,
 				D58928CF195D123400823EE9 /* NewsViewController.swift */,
 				D58928D0195D123400823EE9 /* NewsViewController.xib */,
 				D58928D3195D1F8500823EE9 /* RequestsViewController.swift */,
@@ -120,8 +134,6 @@
 				D58928E0195D205500823EE9 /* MoreViewController.xib */,
 				D58928B9195D106A00823EE9 /* Images.xcassets */,
 				D58928B5195D106A00823EE9 /* Supporting Files */,
-				D537BC10195F7E760058FF0E /* Bridging-Header.h */,
-				D537BC0F195F7E760058FF0E /* FacebookPost2-Bridging-Header.h */,
 			);
 			path = FacebookPost2;
 			sourceTree = "<group>";
@@ -185,6 +197,8 @@
 			);
 			dependencies = (
 				D58928C1195D106A00823EE9 /* PBXTargetDependency */,
+				D545BDFA19626BDC00E94D47 /* PBXTargetDependency */,
+				D545BDFC19626BDC00E94D47 /* PBXTargetDependency */,
 			);
 			name = FacebookPost2Tests;
 			productName = FacebookPost2Tests;
@@ -308,6 +322,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		D545BDFA19626BDC00E94D47 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D58928B1195D106A00823EE9 /* FacebookPost2 */;
+			targetProxy = D545BDF919626BDC00E94D47 /* PBXContainerItemProxy */;
+		};
+		D545BDFC19626BDC00E94D47 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D58928B1195D106A00823EE9 /* FacebookPost2 */;
+			targetProxy = D545BDFB19626BDC00E94D47 /* PBXContainerItemProxy */;
+		};
 		D58928C1195D106A00823EE9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = D58928B1195D106A00823EE9 /* FacebookPost2 */;
@@ -403,7 +427,7 @@
 				INFOPLIST_FILE = FacebookPost2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "FacebookPost2/FacebookPost2-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = FacebookPost2/Bridging.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -418,7 +442,7 @@
 				INFOPLIST_FILE = FacebookPost2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "FacebookPost2/FacebookPost2-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = FacebookPost2/Bridging.h;
 			};
 			name = Release;
 		};

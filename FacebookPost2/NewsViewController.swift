@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NewsViewController: UIViewController {
+class NewsViewController: UIViewController, TTTAttributedLabelDelegate {
 
     // MARK: Properties
     @IBOutlet var postTextView: UIView
@@ -44,7 +44,8 @@ class NewsViewController: UIViewController {
         configureMainPostView()
         configureHerDescriptionLabel()
         configureNotificationCenter()
-    
+        
+       
     
     }
 
@@ -108,6 +109,7 @@ class NewsViewController: UIViewController {
         curveValue = userInfo[UIKeyboardAnimationCurveUserInfoKey] as NSNumber
         var animationCurve = curveValue.intValue
         
+        // Animate UIView
         
         UIView.animateWithDuration(animationDuration, delay: 0.0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {self.postTextView.frame = CGRectMake(0, self.view.frame.size.height - kbSize.height - self.postTextView.frame.size.height, self.postTextView.frame.size.width, self.postTextView.frame.size.height)}, completion: nil)
        
@@ -130,9 +132,49 @@ class NewsViewController: UIViewController {
     
     func configureHerDescriptionLabel() {
         
-     //   var text = herDescriptionLabel.text as NSString
-     //   var linkRang = text.rangeOfString(NSLocalizedString(
+        //This is an example of how to use TTTATTributed text in Swift
         
+        // Note that the initial text is visible in the storyboard.
+        
+        //var attributedText = NSMutableAttributedString(attributedString: herDescriptionLabel.attributedText)
+        
+        
+        // Use NSString so the result of rangeOfString is an NSRange, not Range<String.Index>.
+        
+      //  var string = NSMutableString(herDescriptionLabel.text).mutable
+        
+   //     herDescriptionLabel.delegate = self
+        
+//        var linkRange = NSRange(herDescriptionLabel.text.rangeOfString("http://bit.ly/1jV9zMB", comment:""))
+        
+        // Find the rang of each element to modify
+//        var linkRange = NSRange(text.rangeOfString("http://bit.ly/1jV9zM8"))
+        //var linkRange = text.rangeOfString(NSLocalizedString("http://bit.ly/1jV9zM8", comment:""))
+        
+     //   var underlinedRange = text.rangeOfString(NSLocalizedString("Casey Sotrm", comment: ""))
+        
+        // Make Bold
+        
+  //      attributedText.addAttribute(NSUnderlineStyleAttributeName, value: NSUnderlineStyle.StyleSingle.toRaw(), range: underlinedRange)
+        
+        // Add link
+      
+   //     herDescriptionLabel.addLinkToURL(NSURL.URLWithString("http://bit.ly/1jV9zM8"), withRange: linkRange)
+        
+        
+//        label.enabledTextCheckingTypes = NSTextCheckingTypeLink; // Automatically detect links when the label text is subsequently changed
+//        label.delegate = self; // Delegate methods are called when the user taps on a link (see `TTTAttributedLabelDelegate` protocol)
+//        
+//        label.text = @"Fork me on GitHub! (http://github.com/mattt/TTTAttributedLabel/)"; // Repository URL will be automatically detected and linked
+        
+//        NSRange range = [label.text rangeOfString:@"me"];
+//        [label addLinkToURL:[NSURL URLWithString:@"http://github.com/mattt/"] withRange:range]; // Embedding a custom link in a substring
+        
+        
+        
+        // Make Real
+        
+  //      herDescriptionLabel.attributedText = attributedText
         
     }
     
